@@ -3,18 +3,25 @@ import Button from '../components/Button'
 import { FaArrowUpLong } from "react-icons/fa6";
 import { FaArrowDownLong } from "react-icons/fa6";
 import Table from '../components/Table';
+import useFetch from '../hooks/useFetch';
 const columns = [
     { label: "Name", key: "name" },
     { label: "Age", key: "age" },
     { label: "Email", key: "email" },
   ];
-
-  const data = [
+  interface User {
+    id: number;
+    name: string;
+    email: string;
+    [key: string]: any;
+  }
+const data: Array<{ name: string; age: number; email: string; }> | [] = [
     { name: "John Doe", age: 25, email: "john@example.com" },
     { name: "Jane Smith", age: 30, email: "jane@example.com" },
     { name: "Michael Brown", age: 35, email: "michael@example.com" },
   ];
-const UserOverView = () => {
+const UserOverView:React.FC = () => {
+    // const { data, isLoading, error } = useFetch<User[]>("https://677aa53e671ca03068347b04.mockapi.io/api/users/users");
     return (
         <div className='py-4'>
             <div className='bg-white px-6 py-4 rounded-lg '>
@@ -30,7 +37,10 @@ const UserOverView = () => {
             </div>
             <div className='bg-white px-6 py-4 rounded-lg mt-8'> 
                 <h2 className='mb-4'>Recent Transactions</h2>
-                <Table columns={columns} data={data} />
+                {
+
+               data && data.length !== 0 ? <Table columns={columns} data={data} /> : <p className='text-center'>No Recent Transcation</p>
+                }
             </div>
         </div>
     )

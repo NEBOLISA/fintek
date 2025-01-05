@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useRef } from "react";
 import { IoIosArrowDropright } from "react-icons/io";
 import { AppContext } from "../state/context/AppContext";
+import LoanDetails from "./LoanDetails";
 interface Columns {
     key: string;
     label: string;
@@ -69,7 +70,7 @@ const Table: React.FC<TableProps> = ({ columns, data, loan, openLoanDetails }) =
                                                 }`}
                                         >
                                             {row["status"] === "Active" ? <p className="flex items-center justify-between">{row[col.key]}<IoIosArrowDropright onClick={() =>{ openLoanDetails && openLoanDetails(index)}} />
-                                               
+                                               <LoanDetails dropdownRef={dropdownRef} isLoanDetailsOpen={isLoanDetailsOpen} index={index}/>
                                             </p> : row[col.key]}
                                         </p>
                                     ) : (
