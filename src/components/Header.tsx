@@ -1,15 +1,24 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { IoSearch } from "react-icons/io5";
 import { IoIosNotificationsOutline } from "react-icons/io";
-import { RiArrowDropDownLine } from "react-icons/ri"
+import { GiHamburgerMenu } from "react-icons/gi";
+import { AppContext } from '../state/context/AppContext';
+
 const Header = () => {
     const [isDropdownOpen, setIsDropdownOpen] = React.useState(false)
+   const { isSidebarOpen, setIsSidebarOpen } = useContext(AppContext);
     const toggleDropdown = () => {
         setIsDropdownOpen(!isDropdownOpen)
        
     }
+    const handleSideBar = () =>{
+     setIsSidebarOpen(!isSidebarOpen)
+    }
     return (
-        <div className='bg-white w-full flex items-center justify-between pr-6 h-14 rounded-3xl'>
+        <div className='bg-white w-full flex items-center justify-between pr-6 pl-6 lg:pl-0 h-14 rounded-3xl'>
+            
+             
+            <GiHamburgerMenu className='absolute lg:hidden w-6 h-6 cursor-pointer' onClick={()=>handleSideBar}/>
             <div className='relative w-[30%] focus:outline-none focus:ring-1 focus:ring-purple-200 rounded-3xl  ml-8 bg-gray-100' >
 
                 <input
@@ -23,6 +32,7 @@ const Header = () => {
                     <IoSearch className='absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-500' />
                 </label>
             </div>
+            
             <div className='flex items-center justify-center gap-8'>
                 {/* <div className="relative inline-block text-left">
                   

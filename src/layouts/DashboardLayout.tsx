@@ -15,11 +15,14 @@ interface User {
 const DashboardLayout: React.FC = () => {
     const { data, isLoading, error } = useFetch<User[]>("https://677aa53e671ca03068347b04.mockapi.io/api/users/users");
   return (
-    <div className="flex h-screen overflow-y-hidden ">
-      <Sidebar/> 
+    <div className="flex h-screen overflow-y-scroll lg:overflow-y-hidden ">
+        <div className='hidden lg:block'>
+
+      <Sidebar /> 
+        </div>
       <main className="flex-1 p-4 h-full">
         <Header/>
-        <div className='grid grid-cols-[70%_25%] gap-4 w-full h-max justify-between '>
+        <div className='block grid-cols-[70%_25%] lg:grid gap-4 w-full h-max justify-between '>
 
         <Outlet /> 
         {data ? <UsersList data={data} />:""}

@@ -3,7 +3,7 @@ import Button from '../components/Button'
 import { FaArrowUpLong } from "react-icons/fa6";
 import { FaArrowDownLong } from "react-icons/fa6";
 import Table from '../components/Table';
-import useFetch from '../hooks/useFetch';
+
 const columns = [
     { label: "Name", key: "name" },
     { label: "Age", key: "age" },
@@ -21,7 +21,7 @@ const data: Array<{ name: string; age: number; email: string; }> | [] = [
     { name: "Michael Brown", age: 35, email: "michael@example.com" },
   ];
 const UserOverView:React.FC = () => {
-    // const { data, isLoading, error } = useFetch<User[]>("https://677aa53e671ca03068347b04.mockapi.io/api/users/users");
+    
     return (
         <div className='py-4'>
             <div className='bg-white px-6 py-4 rounded-lg '>
