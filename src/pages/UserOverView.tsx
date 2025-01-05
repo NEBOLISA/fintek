@@ -29,7 +29,7 @@ const UserOverView:React.FC = () => {
                 <h1 className='text-5xl mb-9  '>29,900.00 <sub className='text-sm font-extralight'>USD</sub> </h1>
                 <div className='flex items-center justify-between'>
                    
-                    <Button text='Send' onclick={()=>{}} icon={< FaArrowUpLong className='text-[#f2f2f2] text-sm' />} bgColor='bg-purple-800' textColor='text-white' onHover='hover:bg-purple-900' />
+                    <Button text='Send' onclick={()=>{}} icon={< FaArrowUpLong className='text-[#f2f2f2] text-sm ' />} bgColor='bg-purple-800' textColor='text-white' onHover='hover:bg-purple-900' />
                     <Button text='Request' onclick={()=>{}} icon={< FaArrowDownLong className='text-[#000] text-sm' />} bgColor='bg-gray-100' textColor='text-black' onHover='hover:bg-gray-200'/>
                     <Button text='Top Up' onclick={()=>{}} icon={< FaArrowUpLong className='text-[#000] text-sm' />} bgColor='bg-gray-100' textColor='text-black' onHover="hover:bg-gray-200"/>
                     <button></button>

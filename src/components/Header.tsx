@@ -13,12 +13,15 @@ const Header = () => {
     }
     const handleSideBar = () =>{
      setIsSidebarOpen(!isSidebarOpen)
+     
     }
     return (
         <div className='bg-white w-full flex items-center justify-between pr-6 pl-6 lg:pl-0 h-14 rounded-3xl'>
             
-             
-            <GiHamburgerMenu className='absolute lg:hidden w-6 h-6 cursor-pointer' onClick={()=>handleSideBar}/>
+            
+
+            <GiHamburgerMenu className='absolute lg:hidden w-6 h-6 cursor-pointer' onClick={()=>handleSideBar()}/>
+            
             <div className='relative w-[30%] focus:outline-none focus:ring-1 focus:ring-purple-200 rounded-3xl  ml-8 bg-gray-100' >
 
                 <input

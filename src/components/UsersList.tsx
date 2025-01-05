@@ -17,7 +17,7 @@ const UsersList: React.FC<UsersListProps> = ({data}) => {
       <h2 className='px-6 py-4'>Users</h2>
       <div className='overflow-y-auto h-full pb-8'>
 
-      {data.map((user)=>(
+      {data && data.map((user)=>(
         <User key={user.id} name={user.name} image={avater}/>
       ))}
       

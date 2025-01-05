@@ -37,8 +37,8 @@ const Table: React.FC<TableProps> = ({ columns, data, loan, openLoanDetails }) =
         };
       }, []);
     return (
-        <div className="overflow-x-auto">
-            <table className="min-w-full border-collapse border border-gray-100">
+        <div className="overflow-x-scroll ">
+            <table className="  border-collapse border w-full border-gray-100">
                 <thead>
                     <tr className="bg-purple-200 text-gray-600 uppercase text-sm leading-normal">
                         {columns.map((col) => (

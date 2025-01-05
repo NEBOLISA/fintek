@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import logo from '../assets/logo.png'
 import avater from '../assets/avater.png'
 import link1 from '../assets/overview.png'
@@ -12,17 +12,21 @@ import { FaUser } from "react-icons/fa";
 import { MdContactSupport } from "react-icons/md";
 import { IoMdSettings } from "react-icons/io";
 import { IoLogOut } from "react-icons/io5";
+import { IoIosClose } from "react-icons/io";
 
 
 
 
 import { Link } from 'react-router-dom'
+import { AppContext } from '../state/context/AppContext'
 
 const Sidebar = () => {
     const [activeIndex, setActiveIndex] = React.useState("/dashboard")
-
+      const { isSidebarOpen,setIsSidebarOpen } = useContext(AppContext);
     return (
-        <div className='w-72 bg-transparent h-screen p-4 '>
+        <div className={` ${isSidebarOpen? "absolute left-0 top-0 bottom-0":"hidden"} lg:block w-72 bg-white z-50 lg:bg-transparent h-screen p-4 `}>
+            <IoIosClose className='absolute right-2 top-[6px] cursor-pointer w-8 h-8' onClick={()=>setIsSidebarOpen(false)}/>
+
             <div className='flex w-full items-center justify-between pr-2'>
                 <img className='w-12 h-12 ' src={logo} alt="logo" />
                 <div className='flex h-14 w-max items-center justify-center bg-white px-1 py-2 rounded-3xl'>

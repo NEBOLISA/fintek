@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Outlet } from 'react-router-dom';
 import Sidebar from '../components/Sidebar';
 import Header from '../components/Header';
 import UsersList from '../components/UsersList';
 import useFetch from '../hooks/useFetch';
+import { AppContext } from '../state/context/AppContext';
 
 interface User {
     id: number;
@@ -14,9 +15,11 @@ interface User {
   }
 const DashboardLayout: React.FC = () => {
     const { data, isLoading, error } = useFetch<User[]>("https://677aa53e671ca03068347b04.mockapi.io/api/users/users");
+     const { isSidebarOpen } = useContext(AppContext);
+   
   return (
-    <div className="flex h-screen overflow-y-scroll lg:overflow-y-hidden ">
-        <div className='hidden lg:block'>
+    <div className="flex h-screen overflow-y-scroll lg:overflow-y-hidden relative">
+        <div className={`lg:block`}>
 
       <Sidebar /> 
         </div>
@@ -25,7 +28,7 @@ const DashboardLayout: React.FC = () => {
         <div className='block grid-cols-[70%_25%] lg:grid gap-4 w-full h-max justify-between '>
 
         <Outlet /> 
-        {data ? <UsersList data={data} />:""}
+        { <UsersList data={data!} />}
         </div>
 
       </main>

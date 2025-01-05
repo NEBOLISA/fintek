@@ -19,9 +19,9 @@ import { ReactNode } from "react";
 
 const AppProvider = ({ children }: { children: ReactNode }) => {
     const [isLoanDetailsOpen, setIsLoanDetailsOpen] = React.useState<number | null>(null);
-    const [isSidebarOpen, setIsSidebarOpen] = React.useState<boolean>(false)
+    const [isSidebarOpen, setIsSidebarOpen] = React.useState<boolean>(false);
   return (
-    <AppContext.Provider value={{ isLoanDetailsOpen, setIsLoanDetailsOpen,, setIsSidebarisSidebarOpenOpen }}>
+    <AppContext.Provider value={{ isLoanDetailsOpen, setIsLoanDetailsOpen,isSidebarOpen, setIsSidebarOpen }}>
       {children}
     </AppContext.Provider>
   );

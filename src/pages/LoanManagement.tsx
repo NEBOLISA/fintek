@@ -65,7 +65,7 @@ const LoanManagement = () => {
     }
    
     return (
-        <div className='bg-white my-4 rounded-lg h-max'>
+        <div className='bg-white my-4 rounded-lg h-max w-[380px] sm:w-full'>
             <h2 className='px-6 py-4'>Loan History</h2>
             <Table columns={columns} data={currentData.map((item)=>item)} loan openLoanDetails={openLoanDetails}/>
             <div className="flex justify-center space-x-4 mt-4 mb-4">
