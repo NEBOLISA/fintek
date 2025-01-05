@@ -2,10 +2,22 @@ import React from 'react'
 import Button from '../components/Button'
 import { FaArrowUpLong } from "react-icons/fa6";
 import { FaArrowDownLong } from "react-icons/fa6";
+import Table from '../components/Table';
+const columns = [
+    { label: "Name", key: "name" },
+    { label: "Age", key: "age" },
+    { label: "Email", key: "email" },
+  ];
+
+  const data = [
+    { name: "John Doe", age: 25, email: "john@example.com" },
+    { name: "Jane Smith", age: 30, email: "jane@example.com" },
+    { name: "Michael Brown", age: 35, email: "michael@example.com" },
+  ];
 const UserOverView = () => {
     return (
         <div className='py-4'>
-            <div className='bg-white px-6 py-4 rounded-lg w-[60%]'>
+            <div className='bg-white px-6 py-4 rounded-lg '>
                 <h4 className='font-light text-[#5f5f5f] mb-3'>Total Balance</h4>
                 <h1 className='text-5xl mb-9  '>29,900.00 <sub className='text-sm font-extralight'>USD</sub> </h1>
                 <div className='flex items-center justify-between'>
@@ -15,6 +27,10 @@ const UserOverView = () => {
                     <Button text='Top Up' onclick={()=>{}} icon={< FaArrowUpLong className='text-[#000] text-sm' />} bgColor='bg-gray-100' textColor='text-black' onHover="hover:bg-gray-200"/>
                     <button></button>
                 </div>
+            </div>
+            <div className='bg-white px-6 py-4 rounded-lg mt-8'> 
+                <h2 className='mb-4'>Recent Transactions</h2>
+                <Table columns={columns} data={data} />
             </div>
         </div>
     )
