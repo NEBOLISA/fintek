@@ -4,7 +4,7 @@ import { AppContext } from '../state/context/AppContext';
 
 const LoanManagement = () => {
     const [currentPage, setCurrentPage] = React.useState(0);
-    const { isLoanDetailsOpen, setIsLoanDetailsOpen } = useContext(AppContext);
+    const {  setIsLoanDetailsOpen } = useContext(AppContext);
     const columns = [
         { label: "Loan ID", key: "id" },
         { label: "Amount", key: "amount" },

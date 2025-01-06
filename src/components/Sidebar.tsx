@@ -1,7 +1,6 @@
 import React, { useContext } from 'react'
 import logo from '../assets/logo.png'
 import avater from '../assets/avater.png'
-import link1 from '../assets/overview.png'
 import link2 from '../assets/loan.png'
 import { GrOverview } from "react-icons/gr";
 import { RiFileHistoryLine } from "react-icons/ri";

@@ -9,12 +9,7 @@ const columns = [
     { label: "Age", key: "age" },
     { label: "Email", key: "email" },
   ];
-  interface User {
-    id: number;
-    name: string;
-    email: string;
-    [key: string]: any;
-  }
+
 const data: Array<{ name: string; age: number; email: string; }> | [] = [
     { name: "John Doe", age: 25, email: "john@example.com" },
     { name: "Jane Smith", age: 30, email: "jane@example.com" },
