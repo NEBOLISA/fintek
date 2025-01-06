@@ -13,7 +13,7 @@ const App: React.FC = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/dashboard" element={<DashboardLayout />}>
+        <Route path="/" element={<DashboardLayout />}>
           <Route index element={<UserOverview />} /> {/* Default route */}
           <Route path="loans" element={<LoanManagement />} />
           <Route path="trxn" element={<TransactionHistory />} />
