@@ -1,16 +1,13 @@
-import React, { useContext } from 'react'
+import  { useContext } from 'react'
 import { IoSearch } from "react-icons/io5";
 import { IoIosNotificationsOutline } from "react-icons/io";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { AppContext } from '../state/context/AppContext';
 
 const Header = () => {
-    const [isDropdownOpen, setIsDropdownOpen] = React.useState(false)
+
    const { isSidebarOpen, setIsSidebarOpen } = useContext(AppContext);
-    const toggleDropdown = () => {
-        setIsDropdownOpen(!isDropdownOpen)
-       
-    }
+   
     const handleSideBar = () =>{
      setIsSidebarOpen(!isSidebarOpen)
      
