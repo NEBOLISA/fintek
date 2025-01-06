@@ -1,21 +1,20 @@
-import React, { useState } from "react";
-import  { createContext } from "react";
+import React, { createContext, useState, ReactNode } from "react";
+
 
 export const AppContext = createContext<{
-  isLoanDetailsOpen: number | null;
-  setIsLoanDetailsOpen: React.Dispatch<React.SetStateAction<number | null>>;
-  isSidebarOpen: boolean;
-  setIsSidebarOpen: React.Dispatch<React.SetStateAction<boolean>>;
-}>({
-  isLoanDetailsOpen: null,
-  setIsLoanDetailsOpen: () => {},
-  isSidebarOpen: false,
-  setIsSidebarOpen: () => {},
-});
-
+    isLoanDetailsOpen: number | null;
+    setIsLoanDetailsOpen: React.Dispatch<React.SetStateAction<number | null>>;
+    isSidebarOpen: boolean;
+    setIsSidebarOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  }>({
+    isLoanDetailsOpen: null,
+    setIsLoanDetailsOpen: (() => {}) as React.Dispatch<React.SetStateAction<number | null>>,
+    isSidebarOpen: false,
+    setIsSidebarOpen: (() => {}) as React.Dispatch<React.SetStateAction<boolean>>,
+  });
 // export default AppContext;
 
-import { ReactNode } from "react";
+
 
 const AppProvider = ({ children }: { children: ReactNode }) => {
     const [isLoanDetailsOpen, setIsLoanDetailsOpen] = React.useState<number | null>(null);
